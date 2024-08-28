@@ -1,0 +1,11 @@
+Clases -> Primera letra Mayuscula si es compuesta la siguiente sera Mayuscula
+
+Ej: Perro  ->  public class Perro{
+EstudianteUniversidad  ->  public class EstudianteUniversidad {
+
+Metodos y variable -> Van en minuscula y si es compuesta lo siguiente
+
+Atividad 
+
+Concepto de métodos en java -> implementar los ejercicios con métodos
+Tener en cuenta el concepto de la Firma del método
