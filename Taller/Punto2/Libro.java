@@ -1,4 +1,7 @@
+
 package Taller.Punto2;
+
+import java.lang.reflect.Array;
 
 public class Libro {
     
@@ -8,6 +11,7 @@ public class Libro {
     private int isbn;
     private int numeroDePaginas;
     private boolean disponible;
+    private Array <libros>;
 
     //Método constructor
     public Libro(String titulo, String autor, int isbn, int numeroDePaginas, boolean disponible){
@@ -46,7 +50,7 @@ public class Libro {
      * Entrada: disponibilidad : booleano
      * Salida: disponibilidad : booleano
      */
-    public boolean estaDisponible(int isbn, boolean disponible){
+    public boolean estaDisponible(int isbn){
         return disponible;
     }
 

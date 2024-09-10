@@ -17,12 +17,17 @@ public class EjecutarLibro {
             System.out.println("4 Salir");
             answer = in.nextInt();
             if(answer == 1) {
-                objLibro1.prestar();
+                System.out.println("Ingrese el isbn del libro a prestar: ");
+                int isbn = in.nextInt();
+                objLibro1.prestar(isbn);
             }else if(answer == 2) {
-                objLibro1.devolver();
+                System.out.println("Ingrese el isbn del libro a devolver: ");
+                int isbn = in.nextInt();
+                objLibro1.devolver(isbn);
             }else if(answer == 3) {
-                System.out.println();
-                objLibro1.estaDisponible(false);
+                System.out.println("Ingrese el ISBN del libro a buscar disponibilidad: ");
+                int isbn = in.nextInt();
+                objLibro1.estaDisponible(isbn);
             }else if(answer == 4) {
 
             }
