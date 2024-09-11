@@ -20,11 +20,30 @@ public class Perfume {
     /* Firma del método
      * Público, nombre: AplicarPerfume
      * Entrada: cantidad : double
-     * Salida: cantidad : double
+     * Salida: capacidad : double
      */
     public double AplicarPerfume(double cantidad) {
-        this.capacidad = this.capacidad - cantidad;
+        capacidad = this.capacidad - cantidad;
         return capacidad;
     }
+
+    /* Firma del método
+     * Público, nombre: consultarCantidadRestante
+     * Entrada: none
+     * Salida: none
+     */
+    public void consultarCantidadRestante() {
+        System.out.println("La cantidad de perfume restante es: " + this.capacidad + "ml");
+    }   
+
+     /* Firma del método
+      * Público, nombre: AjustarPrecio
+      * Entrada: nuevoPrecio
+      * Salida: none
+      */
+    public void ajustarPrecio(double nuevoPrecio) {
+        this.precio = nuevoPrecio;
+    }
+
 
 }
