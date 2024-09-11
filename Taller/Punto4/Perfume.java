@@ -45,5 +45,8 @@ public class Perfume {
         this.precio = nuevoPrecio;
     }
 
+    public String toString() {
+        return "[Perfumer --> Nombre: " + nombre +", Marca: "+ marca +", Capacidad: "+ capacidad +", Precio: "+ precio +"]";
+    }
 
 }
