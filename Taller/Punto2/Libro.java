@@ -1,8 +1,6 @@
 
 package Taller.Punto2;
 
-import java.lang.reflect.Array;
-
 public class Libro {
     
     //Atributos
@@ -11,7 +9,6 @@ public class Libro {
     private int isbn;
     private int numeroDePaginas;
     private boolean disponible;
-    private Array <libros>;
 
     //Método constructor
     public Libro(String titulo, String autor, int isbn, int numeroDePaginas, boolean disponible){
