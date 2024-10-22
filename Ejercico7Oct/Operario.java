@@ -3,11 +3,11 @@ package Ejercico7Oct;
 public class Operario extends Trabajador {
     
     //Atributos
-    private final double VALOR_HORA = 8.5;
+    private final double VALOR_HORA = 5500.0;
     private int horas;
     
-    public Operario(double salario, int id, int horas) {
-        super(salario, id);
+    public Operario(int id, String nombre, int horas) {
+        super(id, nombre);
         this.horas = horas;
     }
 
@@ -21,6 +21,11 @@ public class Operario extends Trabajador {
 
     public void setHoras(int horas) {
         this.horas = horas;
+    }
+
+    
+    public double pagar(){
+        return horas * VALOR_HORA;
     }
 
     @Override

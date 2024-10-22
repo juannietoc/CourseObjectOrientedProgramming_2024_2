@@ -3,26 +3,29 @@ package Ejercico7Oct;
 public class Analista extends Trabajador {
     
     //Atributos
-    private double intereses;
+    private double integral;
 
-    public Analista(double salario, int id, double intereses) {
-        super(salario, id);
-        this.intereses = intereses;
+    public Analista(int id, String nombre, double integral) {
+        super(id, nombre);
+        this.integral = integral;
     }
 
-    public double getIntereses() {
-        return intereses;
+    public double getIntegral() {
+        return integral;
     }
 
-    public void setIntereses(double intereses) {
-        this.intereses = intereses;
+    public void setIntegral(double integral) {
+        this.integral = integral;
     }
 
-    @Override
-    public String toString() {
-        return "Analista [intereses=" + intereses + "]";
+    public double pagar(){
+        return integral;
     }
 
+@Override
+public String toString() {
+    return "Analista [integral=" + integral + "]";
+}
     
 
 }

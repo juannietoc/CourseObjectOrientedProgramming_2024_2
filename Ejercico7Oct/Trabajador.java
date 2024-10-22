@@ -4,33 +4,37 @@ package Ejercico7Oct;
 public class Trabajador {
 
     //Atributos
-    private double salario;
     private int id;
+    private String nombre;
 
-    public Trabajador(double salario, int id) {
-        this.salario = salario;
+    public Trabajador(int id, String nombre) {
         this.id = id;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
+        this.nombre = nombre;
     }
 
     public int getId() {
         return id;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
 
+    public double pagar(){
+        return 0.0;
+    }
+   
     @Override
     public String toString() {
-        return "Trabajador [salario=" + salario + "]";
+        return "Trabajador [id=" + id + ", nombre=" + nombre + "]";
     }
 
 }

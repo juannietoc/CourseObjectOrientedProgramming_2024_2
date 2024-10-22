@@ -3,21 +3,21 @@ package Ejercico7Oct;
 public class Consultor extends Trabajador {
     
     //Atributos
-    private double basico;
+    private double venta;
     private double comision;
 
-    public Consultor(double salario, int id, double basico, double comision) {
-        super(salario, id);
-        this.basico = basico;
+    public Consultor(int id, String nombre, double venta, double comision) {
+        super(id, nombre);
+        this.venta = venta;
         this.comision = comision;
     }
 
-    public double getBasico() {
-        return basico;
+    public double getVenta() {
+        return venta;
     }
 
-    public void setBasico(double basico) {
-        this.basico = basico;
+    public void setVenta(double venta) {
+        this.venta = venta;
     }
 
     public double getComision() {
@@ -28,9 +28,14 @@ public class Consultor extends Trabajador {
         this.comision = comision;
     }
 
+    public double pagar() {
+        return comision + venta;
+    }
+
+
     @Override
     public String toString() {
-        return "Consultor [basico=" + basico + ", comision=" + comision + "]";
+        return "Consultor [Venta=" + venta + ", comision=" + comision + "]";
     }
 
     
