@@ -42,7 +42,7 @@ public class Ascensor {
     }
 
     /* Subir piso
-     * Baja piso por piso
+     * sube un piso piso
      */
     public void subirPiso() {
         if (ubicacion < MAX_FLOOR) {
@@ -51,7 +51,7 @@ public class Ascensor {
     }
 
     /* Bajar piso
-     * 
+     * sube un piso
      */
     public void bajarPiso() {
         if(ubicacion > MIN_FLOOR) {

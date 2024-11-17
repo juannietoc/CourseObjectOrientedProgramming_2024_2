@@ -25,23 +25,6 @@ public class SistemaControl {
         this.ascensor1 = ascensor1;
     }
 
-
-    public ArrayList<BotonAscensor> getSolicitudesAscensor() {
-        return solicitudesAscensor;
-    }
-
-    public void setSolicitudesAscensor(ArrayList<BotonAscensor> solicitudesAscensor) {
-        this.solicitudesAscensor = solicitudesAscensor;
-    }
-
-    public ArrayList<BotonPiso> getSolicitudesPiso() {
-        return solicitudesPiso;
-    }
-
-    public void setSolicitudesPiso(ArrayList<BotonPiso> solicitudesPiso) {
-        this.solicitudesPiso = solicitudesPiso;
-    }
-
     /* Mover el ascensor, mueve el ascensor entre piso y piso
      * Entrada: 
      * Salida:
@@ -50,13 +33,50 @@ public class SistemaControl {
     /* Crear nueva solicitud ascensor
      * Entrada: piso destino
      */
+    public void crearSoliAscensor(int pisoDestino, boolean mantenerPuertasAbierta) {
+        BotonAscensor nuevaSoliAscensor = new BotonAscensor(mantenerPuertasAbierta, pisoDestino, null, mantenerPuertasAbierta, pisoDestino, mantenerPuertasAbierta);
+        solicitudesAscensor.add(nuevaSoliAscensor);
+    }
 
     /* Crear nueva solicitud piso
      * Entrada: direccion
      */
+    public void crearSoliPiso() {
+        BotonPiso nuevaSoliPiso = new BotonPiso(false, 0, null, false, null);
+        solicitudesPiso.add(nuevaSoliPiso);
+    }
+
+    /* Buscar solicitud
+     * 
+     */
+    
 
     /* Borrar solicitud ascensor
      * 
      */
+    public void borrarSoliAscensor(int pisoDestino) {
+        int indice = solicitudesAscensor.indexOf(pisoDestino);
+        if(indice != -1) {
+            solicitudesAscensor.remove(indice);
+        }
+    }
 
+    public void borrarSoliPiso(boolean direccion) {
+        int indice = solicitudesPiso.indexOf(direccion);
+        if(indice != -1) {
+            solicitudesPiso.remove(indice);
+        }
+    }
+
+    /* Alerta de fallas en botones, puertas o ascensor.
+     * 
+     */
+    public void sistemaAlertas() {
+        for(int i=0; ) {
+
+        }
+    }
+    /* Tiempo de funcionamiento del ascensor
+     * 
+     */
 }

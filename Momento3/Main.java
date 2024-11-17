@@ -13,11 +13,13 @@ public class Main {
         int answer2 = 0;
         int boton = 0;
 
+        //ASCENSOR
         System.out.println("****************************");
         System.out.println("***********Ascensor*********");
         System.out.println("****************************");
         System.out.println("");
         while(end==false) {
+            //Menu interfaz
             System.out.println("__Menu de usuario__");
             System.out.println("__Pedir ascensor__");
             System.out.println("Presione el boton: ");
