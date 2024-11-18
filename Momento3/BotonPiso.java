@@ -3,19 +3,19 @@ package Momento3;
 public class BotonPiso extends Boton {
     
     //Atributos
-    private String direccion;
+    private boolean direccion;
 
     //Constructor de la clase
-    public BotonPiso(boolean estadoBoton, int numDeBoton, String sonido, boolean luzLed, String direccion) {
-        super(estadoBoton, numDeBoton,sonido, luzLed);
+    public BotonPiso(boolean estadoBoton, String sonido, boolean luzLed, boolean direccion) {
+        super(estadoBoton,sonido, luzLed);
         this.direccion = direccion;
     }
 
-    public String getDireccion() {
+    public boolean getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
+    public void setDireccion(boolean direccion) {
         this.direccion = direccion;
     }
     

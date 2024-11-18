@@ -3,15 +3,21 @@ package Momento3;
 import java.util.Scanner;
 
 public class Main {
-    
+
     public static void main(String[] args) {
         
         Scanner in = new Scanner(System.in);
-        SistemaControl sistemaControl = new SistemaControl(null, null, null);
         boolean end = false;
         int answer = 0;
         int answer2 = 0;
         int boton = 0;
+        int piso =0;
+        boolean direccion;
+        String alerta="";
+
+        Ascensor ascensor1 = new Ascensor(false, 0);
+        Puerta puerta1 = new Puerta(false, false, false);
+        SistemaControl sistema = new SistemaControl(ascensor1, puerta1, null, null);
 
         //ASCENSOR
         System.out.println("****************************");
@@ -25,19 +31,17 @@ public class Main {
             System.out.println("Presione el boton: ");
             System.out.println("1. Subir");
             System.out.println("2. Bajar");
+            System.out.println("3. Admin.");
             answer = in.nextInt();
             switch (answer) {
                 case 1:
                     
                     //Crear nueva solicitud
-                    //Entrada - piso de solicitudes
-                    /*
-                     * for(int i=0; i<sistemaControl.getSolicitudesAscensor().size();i++) {
-                        System.out.println("Esperando...");
-                        System.out.println("Piso del ascensor ----> "+sistemaControl.getAscensor1().getUbicacion());
-                    }
-                     */
-                    //Mover ascensor hacia abajo
+                    direccion = true;
+                    sistema.crearSoliPiso(direccion, false, "Bip", false);
+                    //Mover ascensor hacia abajo3
+                    piso = ascensor1.getUbicacion();
+                    sistema.moverAscensorAbajo(piso);
                     //Entrada - piso de solicitud
                     //Salida - piso x piso hasta llegar a piso solicitado
                     System.out.println("Ha llegado, porfavor ingrese...");
@@ -47,9 +51,10 @@ public class Main {
                     System.out.println("Presione el boton: ");
                     //Metodo interfaz botones del ascensor
                     boton = in.nextInt();
-                    //Metodo sonido y luz de boton
+                    //M
                     System.out.println("Subiendo...");
                     System.out.println("...");
+                    
                     //Metodo mover ascensor hacia arriba
                     //Entrada - piso de solicitud
                     //Salida - piso x piso hasta el piso de solicitud
@@ -60,13 +65,11 @@ public class Main {
                 case 2:
                     //Crear nueva solicitud
                     //Entrada - piso de solicitud
-                    /*
-                     * for(int i=0; i<sistemaControl.getSolicitudesAscensor().size();i++) {
-                        System.out.println("Esperando...");
-                        System.out.println("Piso del ascensor ----> "+sistemaControl.getAscensor1().getUbicacion());
-                    }
-                     */
+                    direccion = false;
+                    sistema.crearSoliPiso(direccion, false, "Bip", false);
                     //Mover ascensor hacia arriba
+                    piso = ascensor1.getUbicacion();
+                    sistema.moverAscensorArriba(piso);
                     //Entrada - piso de solicitud
                     //Salida - piso x piso hasta llegar a piso solicitado
                     System.out.println("Ha llegado, porfavor ingrese...");
@@ -85,6 +88,19 @@ public class Main {
                     System.out.println("Ha llegado");
 
                     break;
+
+                case 3:
+                    System.out.println("__Menu de admin__");
+                    System.out.println("1. Tiempo de funcionamiento.");
+                    System.out.println("2. Reporte de estado");
+                    int answer3 = in.nextInt();
+                    if(answer3 == 1) {
+                       alerta = sistema.tiempoDeFuncionamiento();
+                    } else if(answer3 == 2) {
+                        sistema.sistemaAlertas();
+                    }
+                    break;
+
                 default:
                     System.out.println("Ingrese una opcion valida.");
                     break;

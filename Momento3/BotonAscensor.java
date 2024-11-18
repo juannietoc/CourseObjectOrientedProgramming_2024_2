@@ -8,9 +8,9 @@ public class BotonAscensor extends Boton {
 
 
     //Constructor de la clase
-    public BotonAscensor(boolean estadoBoton, int numDeBoton, String sonido, boolean luzLed, int pisoDestino,
+    public BotonAscensor(boolean estadoBoton, String sonido, boolean luzLed, int pisoDestino,
     boolean mantenerPuertasAbierta) {
-    super(estadoBoton, numDeBoton, sonido, luzLed);
+    super(estadoBoton, sonido, luzLed);
     this.pisoDestino = pisoDestino;
     this.mantenerPuertasAbierta = mantenerPuertasAbierta;
     }

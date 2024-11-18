@@ -4,14 +4,12 @@ public class Boton {
     
     //Atributos
     private boolean estadoBoton;
-    private int numDeBoton;
     private String sonido;
     private boolean luzLed;
     
     //Constructor de la clase
-    public Boton(boolean estadoBoton, int numDeBoton, String sonido, boolean luzLed) {
+    public Boton(boolean estadoBoton, String sonido, boolean luzLed) {
         this.estadoBoton = estadoBoton;
-        this.numDeBoton = numDeBoton;
         this.sonido = sonido;
         this.luzLed = luzLed;
     }
@@ -38,14 +36,6 @@ public class Boton {
 
     public void setLuzLed(boolean luzLed) {
         this.luzLed = luzLed;
-    }
-
-    public int getNumDeBoton() {
-        return numDeBoton;
-    }
-
-    public void setNumDeBoton(int numDeBoton) {
-        this.numDeBoton = numDeBoton;
     }
 
     /* Iluminar y sonar botones
