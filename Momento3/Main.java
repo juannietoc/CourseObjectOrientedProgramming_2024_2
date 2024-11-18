@@ -17,6 +17,7 @@ public class Main {
 
         Ascensor ascensor1 = new Ascensor(false, 0);
         Puerta puerta1 = new Puerta(false, false, false);
+        Boton botones = new Boton(false,"Bip",false);
         SistemaControl sistema = new SistemaControl(ascensor1, puerta1, null, null);
 
         //ASCENSOR
@@ -48,16 +49,17 @@ public class Main {
                     System.out.println("...");
                     System.out.println("...");
                     System.out.println("...");
-                    System.out.println("Presione el boton: ");
-                    //Metodo interfaz botones del ascensor
+                    System.out.println("||Panel de botones||");
+                    System.out.println("1-9: Ir al piso correspondiente");
+                    System.out.println("10 : Mantener las puertas abiertas");
                     boton = in.nextInt();
-                    //M
+                    botones.iluminarYSonarBoton(boton);
                     System.out.println("Subiendo...");
                     System.out.println("...");
-                    
                     //Metodo mover ascensor hacia arriba
                     //Entrada - piso de solicitud
                     //Salida - piso x piso hasta el piso de solicitud
+                    sistema.moverAscensorArriba(boton);
                     System.out.println("Ha llegado");
 
                     break;
@@ -76,15 +78,18 @@ public class Main {
                     System.out.println("...");
                     System.out.println("...");
                     System.out.println("...");
-                    System.out.println("Presione el boton: ");
-                    //Metodo interfaz botones del ascensor
+                    System.out.println("||Panel de botones||");
+                    System.out.println("1-9: Ir al piso correspondiente");
+                    System.out.println("10 : Mantener las puertas abiertas");
                     boton = in.nextInt();
                     //Metodo sonido y luz de boton
+                    botones.iluminarYSonarBoton(boton);
                     System.out.println("Bajando...");
                     System.out.println("...");
-                    //Metodo mover ascensor hacia arriba
+                    //Metodo mover ascensor hacia abajo
                     //Entrada - piso de solicitud
                     //Salida - piso x piso hasta el piso de solicitud
+                    sistema.moverAscensorAbajo(boton);
                     System.out.println("Ha llegado");
 
                     break;
@@ -96,6 +101,7 @@ public class Main {
                     int answer3 = in.nextInt();
                     if(answer3 == 1) {
                        alerta = sistema.tiempoDeFuncionamiento();
+                       System.out.println(alerta);
                     } else if(answer3 == 2) {
                         sistema.sistemaAlertas();
                     }

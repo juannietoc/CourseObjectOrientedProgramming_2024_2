@@ -7,6 +7,7 @@ public class SistemaControl {
     //Atributos
     private Ascensor ascensor1;
     private Puerta puerta1;
+    private Boton botones;
     
     
     //ArrayList solicitudes
@@ -18,6 +19,7 @@ public class SistemaControl {
     public SistemaControl(Ascensor ascensor1, Puerta puerta1, ArrayList<BotonAscensor> solicitudesAscensor, ArrayList<BotonPiso> solicitudesPiso) {
         ascensor1 = new Ascensor(false, 0);
         puerta1 = new Puerta(false, false, false);
+        botones = new Boton(false,"Bip",false);
         solicitudesAscensor = new ArrayList<BotonAscensor>();
         solicitudesPiso = new ArrayList<BotonPiso>();
     }
